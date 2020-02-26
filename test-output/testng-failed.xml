@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Academy.DemoProject.HomePageTest">
+      <class name="Academy.DemoProject.LoginPageTest">
         <methods>
-          <include name="teardown"/>
           <include name="initialize"/>
-          <include name="basePageNavigation" invocation-numbers="0 1"/>
+          <include name="basePageNavigation"/>
         </methods>
-      </class> <!-- Academy.DemoProject.HomePageTest -->
+      </class> <!-- Academy.DemoProject.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -6,29 +6,32 @@ import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Base {
-	
+
 	public static WebDriver driver;
 	public Properties prop;
-public WebDriver initializeDriver() throws IOException
-{
-	
- prop= new Properties();
-FileInputStream fis=new FileInputStream("C:\\Users\\kaush\\eclipse-workspace\\satya\\DemoProject\\src\\main\\java\\config\\data.properties");
 
-prop.load(fis);
-String browserName=prop.getProperty("browser");
-System.out.println(browserName);
+	public WebDriver initializeDriver() throws IOException {
 
-if(browserName.equals("chrome"))
-{
-	 System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaush\\Downloads\\chromedriver_win32 (1)\\chromedriver.exe");
-	driver= new ChromeDriver();
-		//execute in chrome driver
-	
-}
+		prop = new Properties();
+		FileInputStream fis = new FileInputStream(
+				System.getProperty("user.dir") + "/src/main/java/config/data.properties");
+		prop.load(fis);
+		String browserName = prop.getProperty("browser");
+		System.out.println(browserName);
 
-return driver;
-}
+		if (browserName.equals("chrome")) {
+
+			System.setProperty("webdriver.chrome.driver",
+					System.getProperty("user.dir") + "/src/test/java/Resources/Drivers/chromedriver.exe");
+			driver = new ChromeDriver();
+
+			// execute in chrome driver
+
+		}
+
+		return driver;
+	}
 }

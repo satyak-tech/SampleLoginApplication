@@ -1,6 +1,5 @@
 package Academy.DemoProject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,11 +13,11 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//input[@id='user_email']")
+	@FindBy(xpath="//input[@id='email']")
 	WebElement email;
-	@FindBy(xpath="//input[@id='user_password']")
+	@FindBy(xpath="//input[@id='pass']")
 	WebElement password;
-	@FindBy(name="commit")
+	@FindBy(xpath="//input[@value='Log In']")
 	WebElement go;
 	
 	public WebElement emailid()
@@ -29,7 +28,7 @@ public class LoginPage {
 	{
 		return password;
 	}
-	public WebElement commit()
+	public WebElement submit()
 	{
 		return go;
 	}
